@@ -21,7 +21,7 @@ public class RewardsRace extends Race
     @Override
     public void raceDay()
     {        //welcome people to the race
-        System.out.println("Welcome to - " + getName());
+        System.out.println("Welcome to - " + getName() + "! Race Length: " + getRaceLengthKilometers() + "K");
         System.out.println("Registered today: ");
         getRunners().stream().forEach(System.out::println);
         System.out.println();
@@ -54,7 +54,7 @@ public class RewardsRace extends Race
         } else if(raceLengthKilometers <= 20)
         {
             reward = "a consensual kiss and $1000!";
-        } else if (raceLengthKilometers <= 50)
+        } else
         {
             reward = "two high fives, a hug, a massage, and a vacation to Portland, Maine!";
         }

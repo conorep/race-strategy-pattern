@@ -19,7 +19,7 @@ public class Main
         Runner[] runners = {
                 new Runner("Stan Williams", Arrays.asList(new Document("Winter Registration"))),
                 new Runner("Michelle Smith", Arrays.asList(new Document("Fall Registration"),
-                                                                 new Document("Liability Waiver"))),
+                                                                new Document("Liability Waiver"))),
                 new Runner("Tyler Patrick", Arrays.asList(new Document("Winter Registration"),
                                                                 new Document("Liability Waiver"))),
                 new Runner("Jean Davis", Arrays.asList(new Document("Winter Registration"),
@@ -57,6 +57,8 @@ public class Main
 
         winterSnowRace.raceDay();
 
+        /*TESTING REWARDS RACE OBJECT*/
+
         //creating a third race with different registration
         Race springRace = new RewardsRace("Spring Forth Race",
                 LocalDate.of(2023, 04, 20), 10, new SpringRegistrationRequirements());
@@ -66,7 +68,22 @@ public class Main
 
         springRace.raceDay();
 
-        //create one more race testing out raceLength
+        //creating a fourth race testing out raceLength
+        RewardsRace fallRaceRewards = new RewardsRace("Fall Backwards Race",
+                LocalDate.of(2024, 11, 22), 52, new FallRegistrationRequirements());
 
+        Arrays.stream(runners).forEach(fallRaceRewards::register);
+        System.out.println();
+
+        fallRaceRewards.raceDay();
+
+        //creating a fourth race testing out raceLength
+        RewardsRace winterRaceRewards = new RewardsRace("Winter Things Race",
+                LocalDate.of(2024, 02, 28), 3, new WinterRegistrationRequirements());
+
+        Arrays.stream(runners).forEach(winterRaceRewards::register);
+        System.out.println();
+
+        winterRaceRewards.raceDay();
     }
 }
